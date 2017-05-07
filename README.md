@@ -12,14 +12,17 @@ The following stuff is needing for this to work:
 
 #### Linux setup
 ```sh
-$ apt-get install python
-$ apt-get install python-pip
-$ apt-get install nmap
+$ apt-get install python nmap python-pip
 $ pip install python-nmap
+$ git clone https://github.com/MemeKing/DragNet
 ```
 
 #### Windows setup
-Install everything according to their individual instructions.
+1. Download and extract the repo. 
+2. Run the following in the command prompt.
+```cmd
+> python -m pip install python-nmap
+``` 
 
 #### Questions
 >Is this legal?
