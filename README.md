@@ -4,6 +4,7 @@ This python script will find random web servers on the internet. It isn't a pene
 ### Usage
 Run this script from the command line. It will display results in the console.
 Scan() can be used standalone. It will return one random live IP that's running whatever port you give it.
+
 ### Installation
 The following stuff is needing for this to work:
 * [Python 2.x](https://www.python.org/)
@@ -33,4 +34,7 @@ i dunno lol. This script doesn't try to compromise anything but the legality and
 
 The speed of this script is random. You might get a hit right away or it might take several minutes.
 
-![glorious nmap](http://nmap.org/images/nmap-logo-256x256.png)
+>Why are all my results going to "Invalid URL" and "404 not found" pages? I thought this only returned live servers?
+
+Most of your results will be duds like this because the script can't tell the difference between a live IP with something actually behind it and a live IP that just responds. Sites like this usually still have something on them, but I'll leave the exploring to you.
+![glorious nmap](http://nmap.org/images/nmap-logo-256x256.png) 

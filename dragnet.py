@@ -3,23 +3,17 @@ import nmap
 
 
 def Scan(port):
-    hosts = []
     nm = nmap.PortScanner()
-    while len(hosts) == 0:
+    while True:
         nm.scan('-iR 1', str(port))
-        for i in nm.all_hosts():
-            if nm[i]['tcp'][port]['state'] == "open":
-                hosts.append(i)
-    return hosts
-
-
-def main(n):
-    openHosts = []
-    while len(openHosts) < n:
-        openHosts.append(Scan(80))
-        print openHosts[-1]
+        if len(nm.all_hosts()) > 0:
+            if nm[nm.all_hosts()[0]]['tcp'][port]['state'] == "open":
+                return nm.all_hosts()[0]
 
 
 if __name__ == "__main__":
     print "Scanning..."
-    main(5)
+    openHosts = []
+    while len(openHosts) < 5:       # How many live IPs to fetch.
+        openHosts.append(Scan(80))  # Change '80' to search other ports.
+        print openHosts[-1]
